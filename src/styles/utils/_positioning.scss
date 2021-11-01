@@ -1,0 +1,22 @@
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+// Positions
+.position-relative {
+    position: relative;
+}
+
+.position-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.y-center {
+    top: 50%;
+    transform: translateY(-50%);
+}

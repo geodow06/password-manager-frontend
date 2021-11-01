@@ -1,0 +1,13 @@
+.topbar {
+    top: 0;
+    .topbar-hold {
+        position: relative;
+        height: $topbar-height;
+        border-radius: inherit;
+        padding: 0 1rem;
+    }
+    position: relative;
+    height: $topbar-height;
+    border-radius: inherit;
+    padding: 0 1rem;
+}
