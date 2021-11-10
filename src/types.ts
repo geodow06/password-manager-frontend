@@ -4,14 +4,14 @@ export type route = {
     path: string,
     exact?: boolean,
     component: ComponentType,
-    settings?: settings
+    settings?: Settings
 };
 
-export type settings = {
-    topbar?: elementSetting,
-    footer?: elementSetting
+export type Settings = {
+    topbar?: ElementSetting,
+    footer?: ElementSetting
 };
 
-export type elementSetting = {
+export type ElementSetting = {
     show?: boolean
 }

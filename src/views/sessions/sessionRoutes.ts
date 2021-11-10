@@ -1,8 +1,8 @@
-import { route, settings } from "types";
+import { route, Settings } from "types";
 import NotFound from "./NotFound";
 import SignIn from "./SignIn";
 
-const sessionRouteSettings: settings = {
+const sessionRouteSettings: Settings = {
     topbar: {
         show: false
     },

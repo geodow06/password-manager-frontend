@@ -4,25 +4,36 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/history": "^4.7.9",
     "@types/jest": "^26.0.15",
+    "@types/lodash": "^4.14.176",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.20",
     "@types/react-router": "^5.1.17",
     "@types/react-router-config": "^5.0.3",
     "@types/react-router-dom": "^5.3.2",
-    "history": "^5.0.1",
+    "@types/redux-thunk": "^2.1.0",
+    "connected-react-router": "^6.9.1",
+    "history": "4.10.1",
+    "lodash": "^4.17.21",
     "node-sass": "5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-perfect-scrollbar": "^1.5.8",
+    "react-redux": "^7.2.6",
     "react-router": "^5.2.1",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -30,6 +41,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "sonar": "node sonar-project.js",
+    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,6 +61,16 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "sonarqube-scanner": "^2.8.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/reportWebVitals.ts",
+      "!src/index.tsx"
     ]
   }
 }

@@ -1,4 +1,4 @@
-import { Redirect } from "react-router";
+import { Redirect } from "react-router-dom";
 import { route } from "types";
 import dashboardRoutes from "views/dashboard/dashboardRoutes";
 import sessionRoutes from "views/sessions/sessionRoutes";
