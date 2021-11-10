@@ -3,7 +3,7 @@ import { Component } from "react";
 class Topbar extends Component {
     render() {
         return(
-            <div className="tobar">
+            <div className="topbar">
                 Topbar
             </div>
         );

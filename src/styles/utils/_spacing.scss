@@ -117,6 +117,10 @@ $spaces: (
     height: 100vh;
 }
 
+.h-100vh-th {
+  height: calc(100vh - (2 * #{$topbar-height}))
+}
+
 // Width
 .w-100 {
     width: 100%''
