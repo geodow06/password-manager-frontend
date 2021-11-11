@@ -14,4 +14,9 @@ export type Settings = {
 
 export type ElementSetting = {
     show?: boolean
-}
+};
+
+export type Account = {
+    name: string,
+    encryptedValue: string,
+};

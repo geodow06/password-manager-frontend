@@ -51,7 +51,7 @@ class Layout extends Component<LayoutComponentProps, layoutState> {
     render() {
         const { routes } = this.appContext;
         const { layoutSettings } = this.props;
-        
+
         return(
             <div className="layout">
                 <div className="content-wrap position-relative">
