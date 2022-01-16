@@ -62,9 +62,9 @@ describe('<Layout/>', () => {
 
             describe('At /session/signin', () => {
                 test('Should not render topbar and footer', () => {
-                    const { getByText } = renderWithConnectedRouter(<Layout/>, store.getState(), '/session/signin');
+                    const { getByText, getByTestId } = renderWithConnectedRouter(<Layout/>, store.getState(), '/session/signin');
                     
-                    expect(() => getByText(/Topbar/i)).toThrowError();
+                    expect(() => getByTestId(/topbar/i)).toThrowError();
                     expect(() => getByText(/Footer/i)).toThrowError();
                 });
             });
