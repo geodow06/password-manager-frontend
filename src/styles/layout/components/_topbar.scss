@@ -6,6 +6,18 @@
         height: $topbar-height;
         border-radius: inherit;
         padding: 0 1rem;
+
+        .brand-area {
+            height: $topbar-height;
+            justify-content: left;
+
+            .brand {
+                .brand__text {
+                    font-weight: bold;
+                    font-size: 1.125rem;
+                }
+            }
+        }
     }
     position: relative;
     height: $topbar-height;
