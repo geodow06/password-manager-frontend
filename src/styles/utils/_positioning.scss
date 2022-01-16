@@ -6,6 +6,18 @@
     justify-content: center;
 }
 
+.flex-left {
+    justify-content: flex-start;
+}
+
+.flex-right {
+    justify-content: flex-end;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
 // Positions
 .position-relative {
     position: relative;

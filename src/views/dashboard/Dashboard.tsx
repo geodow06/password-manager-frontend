@@ -1,30 +1,55 @@
-import { Grid } from '@material-ui/core';
-import PasswordCard from 'layout/components/PasswordCard';
+import PasswordCard from 'layout/components/content/PasswordCard';
 import React, { Component } from 'react'
 import { Account } from 'types';
-
 class Dashboard extends Component {
     render() {
         const testAccounts: Account[] = [
             {
-                name: "google", 
-                encryptedValue:"dcxsfesa"
+                accountId: "1",
+                accountName: "google", 
+                value:"dcxsfesa",
+                imageSource: "",
+                url: "https://google.com",
+                userId: "1",
             },
             {
-                name: "facebook",
-                encryptedValue: "dsagasg"
+                accountId: "2",
+                accountName: "facebook",
+                value: "dsagasg",
+                imageSource: "",
+                userId: "2"
+            },
+            {
+                accountId: "3",
+                accountName: "jitter", 
+                value:"dcxsfesa",
+                imageSource: "",
+                userId: "2",
+            },
+            {
+                accountId: "4",
+                accountName: "pinstagram",
+                value: "dsagasg",
+                imageSource: "",
+                userId: "3"
+            },
+            {
+                accountId: "5",
+                accountName: "soc",
+                value: "dsagasg",
+                imageSource: "",
+                userId: "3"
             }
         ];
-
         return (
             <div data-testid="dashboard" className="dashboard">
-                <Grid container spacing={3}>
+                    <div className="password-card-grid flex flex-left">
                     {testAccounts.map((account, index) => (
-                        <Grid item xs={2} sm={4} md={4} key={index}>
+                        <div className="ml-16 mt-20" key={index}>
                             <PasswordCard account={account}/>
-                        </Grid>
+                        </div>
                     ))}
-                </Grid>
+                    </div>
             </div>
         );
     }

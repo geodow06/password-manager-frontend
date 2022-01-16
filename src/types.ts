@@ -17,6 +17,10 @@ export type ElementSetting = {
 };
 
 export type Account = {
-    name: string,
-    encryptedValue: string,
+    accountId: string,
+    accountName?: string,
+    value: string,
+    imageSource: string,
+    url?: string,
+    userId: string
 };

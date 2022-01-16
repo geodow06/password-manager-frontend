@@ -8,8 +8,8 @@ import { withRouter } from "react-router-dom";
 import { setLayoutSettings } from "redux/actions/LayoutActions";
 import { RootState } from "redux/store";
 import { Settings } from "types";
-import Footer from "./components/Footer";
-import Topbar from "./components/Topbar";
+import Footer from "./components/structure/Footer";
+import Topbar from "./components/structure/Topbar";
 import { isEqual, merge } from "lodash";
 
 type layoutState = {
