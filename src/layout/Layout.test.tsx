@@ -49,7 +49,7 @@ describe('<Layout/>', () => {
                 });
                 
                 test('Should render Topbar component', () => {
-                    expect(renderReturn.getByText(/Topbar/i)).toBeInTheDocument();
+                    expect(renderReturn.getByTestId(/topbar/i)).toBeInTheDocument();
                 });
                 test('Should render Dashboard component', () => {
                    
