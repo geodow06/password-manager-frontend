@@ -1,3 +1,4 @@
+import { SetAccountsAction, SetAccountsActionPayload } from "redux/actions/AccountsActions";
 import reducer from "./AccountsReducer";
 
 const initialState = {
@@ -8,39 +9,18 @@ const previousStateAccounts = {
     accounts: [
         {
             accountId: "1",
-            accountName: "google", 
-            value:"dcxsfesa",
-            imageSource: "",
-            url: "https://google.com",
+            accountName: "test1", 
+            value:"testValue1",
+            imageSource: "testImg1",
+            url: "testUrl1",
             userId: "1",
         },
         {
             accountId: "2",
-            accountName: "facebook",
-            value: "dsagasg",
-            imageSource: "",
+            accountName: "test2",
+            value: "testValue2",
+            imageSource: "testImg2",
             userId: "2"
-        },
-        {
-            accountId: "3",
-            accountName: "jitter", 
-            value:"dcxsfesa",
-            imageSource: "",
-            userId: "2",
-        },
-        {
-            accountId: "4",
-            accountName: "pinstagram",
-            value: "dsagasg",
-            imageSource: "",
-            userId: "3"
-        },
-        {
-            accountId: "5",
-            accountName: "soc",
-            value: "dsagasg",
-            imageSource: "",
-            userId: "3"
         }
     ]
 };
@@ -57,4 +37,42 @@ describe('Accounts Reducer', () => {
             expect(reducer(previousStateAccounts)).toEqual(previousStateAccounts);
         });
     });
+
+    describe('Set Accounts', () => {
+        const newAccountsPayload: SetAccountsActionPayload = [
+            {
+                accountId: "1",
+                accountName: "test1", 
+                value:"testValue1",
+                imageSource: "testImg1",
+                url: "testUrl1",
+                userId: "1",
+            },
+            {
+                accountId: "2",
+                accountName: "test2",
+                value: "testValue2",
+                imageSource: "testImg2",
+                userId: "2"
+            },
+            {
+                accountId: "3",
+                accountName: "test3", 
+                value:"testValue3",
+                imageSource: "testImg3",
+                url: "testUrl3",
+                userId: "1",
+            }
+        ]
+
+        test('Should correctly update the states accounts array', () => {
+            const newAccounts = {
+                ...initialState,
+                accounts: { ...newAccountsPayload }
+            }
+    
+            const setAccountsAction = new SetAccountsAction(newAccountsPayload);
+            expect(reducer(undefined, setAccountsAction)).toEqual(newAccounts);
+        });
+    })
 });
