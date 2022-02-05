@@ -24,3 +24,5 @@ export type Account = {
     url?: string,
     userId: string
 };
+
+export type Accounts = Account[]

@@ -1,12 +1,9 @@
 import { SetAccountsAction, SetAccountsActionPayload } from "redux/actions/AccountsActions";
-import reducer from "./AccountsReducer";
+import reducer, { AccountsState } from "./AccountsReducer";
 
-const initialState = {
-    accounts: []
-};
+const initialState: AccountsState = [];
 
-const previousStateAccounts = {
-    accounts: [
+const previousStateAccounts = [
         {
             accountId: "1",
             accountName: "test1", 
@@ -22,8 +19,7 @@ const previousStateAccounts = {
             imageSource: "testImg2",
             userId: "2"
         }
-    ]
-};
+];
 
 describe('Accounts Reducer', () => {
     describe('When passed no arguments', () => {
@@ -66,13 +62,10 @@ describe('Accounts Reducer', () => {
         ]
 
         test('Should correctly update the states accounts array', () => {
-            const newAccounts = {
-                ...initialState,
-                accounts: { ...newAccountsPayload }
-            }
+            const newAccounts = newAccountsPayload;
     
             const setAccountsAction = new SetAccountsAction(newAccountsPayload);
             expect(reducer(undefined, setAccountsAction)).toEqual(newAccounts);
         });
-    })
+    });
 });

@@ -6,7 +6,7 @@ import LayoutReducer from "./LayoutReducer";
 
 const rootReducer = (history: History) => combineReducers({
     layout: LayoutReducer,
-    account: AccountsReducer,
+    accounts: AccountsReducer,
     router: connectRouter(history)
 })
 
