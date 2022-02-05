@@ -25,7 +25,6 @@ class Dashboard extends Component<DashboardProps, dashboardState> {
         // Add boolean to reducer
         const hasAccounts = accounts.length > 0;
 
-        console.log(accounts)
         return (
             <div data-testid="dashboard" className="dashboard">
                 {hasAccounts &&

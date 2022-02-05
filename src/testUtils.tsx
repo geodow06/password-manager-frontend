@@ -8,14 +8,16 @@ import { Switch } from "react-router";
 import { configureStore } from "redux/store";
 import routes from "routes";
 
-const store = configureStore();
+
 
 export const renderWithConnectedRouter = (
         ui: JSX.Element, 
-        initialState: any = {},
+        preLoadedState: any = {},
         route: string = "/" 
     ) => {
         
+    const store = configureStore(preLoadedState);
+
     const history = createMemoryHistory({initialEntries: [route]});
 
     const Wrapper: ComponentType = ({ children }: any) => (

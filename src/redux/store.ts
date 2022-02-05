@@ -4,7 +4,7 @@ import thunk from "redux-thunk";
 import myHistory from "myHistory";
 import { routerMiddleware } from "connected-react-router";
 
-export const configureStore = () => {
+export const configureStore = (preLoadedState = {}) => {
     
     const middlewares: any = [
         thunk,
@@ -13,6 +13,7 @@ export const configureStore = () => {
 
     return createStore(
         rootReducer(myHistory),
+        preLoadedState,
         compose(
             applyMiddleware(...middlewares)
         )

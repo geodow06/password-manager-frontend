@@ -45,16 +45,16 @@ const testAccounts: SetAccountsActionPayload = [
 
 describe("<Dashboard/>", () => {
     describe("On render", () => {
-        // describe("And there exists valid accounts in redux store", () => {
-        //     test("Should render PasswordCards for each account", () => {
-        //         const initialState = {...store.getState(), accounts: testAccounts}
-        //         renderWithConnectedRouter(<Dashboard/>, initialState);
-        //         const googleElement = screen.queryByText(/google/i);
-        //         const facebookElement = screen.queryByText(/facebook/i);
-        //         expect(googleElement).toBeInTheDocument();
-        //         expect(facebookElement).toBeInTheDocument();
-        //     });
-        // });
+        describe("And there exists valid accounts in redux store", () => {
+            test("Should render PasswordCards for each account", () => {
+                const initialState = {...store.getState(), accounts: testAccounts}
+                renderWithConnectedRouter(<Dashboard/>, initialState);
+                const googleElement = screen.queryByText(/google/i);
+                const facebookElement = screen.queryByText(/facebook/i);
+                expect(googleElement).toBeInTheDocument();
+                expect(facebookElement).toBeInTheDocument();
+            });
+        });
 
         describe("And the accounts array in initial state is empty", () => {
             test("Should display correct text", () => {
