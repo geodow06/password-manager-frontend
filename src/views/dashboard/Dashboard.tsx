@@ -3,7 +3,6 @@ import PasswordCard from 'layout/components/content/PasswordCard';
 import React, { Component } from 'react'
 import { connect, ConnectedProps } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
-import { setAccounts } from 'redux/actions/AccountsActions';
 import { RootState } from 'redux/store';
 import { Accounts } from 'types';
 
@@ -48,11 +47,7 @@ const mapState = (state: RootState) => ({
     accounts: state.accounts
 });
 
-const mapDispatch = {
-    setCurrentUserAccounts: ( proposedAccounts: Accounts ) => setAccounts(proposedAccounts)
-};
-
-const connector = connect(mapState, mapDispatch);
+const connector = connect(mapState, {});
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 

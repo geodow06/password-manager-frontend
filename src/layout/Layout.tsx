@@ -7,15 +7,33 @@ import { matchRoutes, renderRoutes } from "react-router-config";
 import { withRouter } from "react-router-dom";
 import { setLayoutSettings } from "redux/actions/LayoutActions";
 import { RootState } from "redux/store";
-import { Settings } from "types";
+import { Accounts, Settings } from "types";
 import Footer from "./components/structure/Footer";
 import Topbar from "./components/structure/Topbar";
 import { isEqual, merge } from "lodash";
+import { setAccounts } from "redux/actions/AccountsActions";
 
 type layoutState = {
     settings: Settings
 }
 
+const testAccounts = [
+    {
+        accountId: "1",
+        accountName: "test1", 
+        value:"testValue1",
+        imageSource: "testImg1",
+        url: "testUrl1",
+        userId: "1",
+    },
+    {
+        accountId: "2",
+        accountName: "test2",
+        value: "testValue2",
+        imageSource: "testImg2",
+        userId: "2"
+    }
+];
 
 class Layout extends Component<LayoutComponentProps, layoutState> {
 
@@ -25,6 +43,9 @@ class Layout extends Component<LayoutComponentProps, layoutState> {
         super(props);
 
         this.appContext = context;
+
+        // Add accounts to redux to simulate api call until functionality added
+        props.setCurrentUserAccounts(testAccounts);
 
         this.updateSettingsFromRouter();
     }
@@ -72,8 +93,9 @@ const mapState = (state: RootState) => ({
 })
 
 const mapDispatch = {
-    setCurrentLayoutSettings: (proposedSettings: Settings) => setLayoutSettings(proposedSettings)
-}
+    setCurrentLayoutSettings: (proposedSettings: Settings) => setLayoutSettings(proposedSettings),
+    setCurrentUserAccounts: (proposedAccounts: Accounts) => setAccounts(proposedAccounts)
+};
 
 const connector = connect(mapState, mapDispatch);
 
