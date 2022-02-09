@@ -4,17 +4,15 @@ import { Accounts } from "types";
 
 export const SET_ACCOUNTS = "SET_ACCOUNTS";
 
-export type SetAccountsActionPayload = Accounts;
-
-export class SetAccountsAction extends ActionWithPayload<SetAccountsActionPayload> {
+export class SetAccountsAction extends ActionWithPayload<Accounts> {
     public readonly type = SET_ACCOUNTS;
 }
 
 export type AccountsActions = DefaultAction | SetAccountsAction;
 
-export const setAccounts = ( payload: SetAccountsActionPayload ) => (dispatch: AppDispatch) => {
+export const setAccounts = ( accounts: Accounts ) => (dispatch: AppDispatch) => {
     dispatch({
         type: SET_ACCOUNTS,
-        payload: payload
+        payload: accounts
     });
 };
