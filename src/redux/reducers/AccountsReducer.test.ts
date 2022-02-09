@@ -1,4 +1,5 @@
-import { SetAccountsAction, SetAccountsActionPayload } from "redux/actions/AccountsActions";
+import { SetAccountsAction } from "redux/actions/AccountsActions";
+import { Accounts } from "types";
 import reducer, { AccountsState } from "./AccountsReducer";
 
 const initialState: AccountsState = [];
@@ -35,7 +36,7 @@ describe('Accounts Reducer', () => {
     });
 
     describe('Set Accounts', () => {
-        const newAccountsPayload: SetAccountsActionPayload = [
+        const newAccountsPayload: Accounts = [
             {
                 accountId: "1",
                 accountName: "test1", 

@@ -1,10 +1,10 @@
 import { screen } from "@testing-library/react";
-import { SetAccountsActionPayload } from "redux/actions/AccountsActions";
 import store from "redux/store";
 import { renderWithConnectedRouter } from "testUtils";
+import { Accounts } from "types";
 import Dashboard from "./Dashboard";
 
-const testAccounts: SetAccountsActionPayload = [
+const testAccounts: Accounts = [
     {
         accountId: "1",
         accountName: "google", 
