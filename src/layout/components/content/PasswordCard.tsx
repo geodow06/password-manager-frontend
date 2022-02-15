@@ -12,7 +12,8 @@ class PasswordCard extends Component<PasswordCardProps> implements Hoverable {
     hasImageSource: boolean;
 
     state = {
-        showLaunch: false
+        showLaunch: false,
+        showOptions: false
     };
 
     constructor(props: PasswordCardProps) {
@@ -25,10 +26,11 @@ class PasswordCard extends Component<PasswordCardProps> implements Hoverable {
         if(this.props.account.url) {
             this.setState({showLaunch:true});
         }
+        this.setState({showOptions: true});
     };
 
     handleLeave = (): void => {
-        this.setState({showLaunch:false});
+        this.setState({showLaunch: false, showOptions: false});
     };
 
     handleLaunch = (): void => {
@@ -46,7 +48,7 @@ class PasswordCard extends Component<PasswordCardProps> implements Hoverable {
                     </div>
                     <div className="flex flex-space-between">
                         <Typography variant="h6" className="ml-10 my-8" component="div">{account.accountName}</Typography>
-                        <PasswordCardOptions account={account}/>
+                        {this.state.showOptions && <PasswordCardOptions account={account}/>}
                     </div>
                 </CardActionArea>
             </Card>
