@@ -1,16 +1,19 @@
 import AppContext, { MyContextType } from 'appContext';
+import PasswordActions from 'layout/components/content/PasswordActions';
 import PasswordCard from 'layout/components/content/PasswordCard';
 import React, { Component } from 'react'
 import { connect, ConnectedProps } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
+import { updateSelected } from 'redux/actions/SelectedActions';
 import { RootState } from 'redux/store';
-import { Accounts } from 'types';
+import { Account, Accounts } from 'types';
 
-type dashboardState = {
-    accounts: Accounts
+type DashboardState = {
+    accounts: Accounts,
+    selected: Accounts
 }
 
-class Dashboard extends Component<DashboardProps, dashboardState> {
+class Dashboard extends Component<DashboardProps, DashboardState> {
     appContext: MyContextType;
 
     constructor(props: DashboardProps, context: MyContextType) {
@@ -19,6 +22,10 @@ class Dashboard extends Component<DashboardProps, dashboardState> {
         this.appContext = context;
     }
 
+    onCardChecked = (account: Account) => {
+        this.props.updateSelectedAccounts(account)
+    };
+
     render() {
         const { accounts } = this.props;
         // Add boolean to reducer
@@ -26,11 +33,12 @@ class Dashboard extends Component<DashboardProps, dashboardState> {
 
         return (
             <div data-testid="dashboard" className="dashboard">
+                <PasswordActions/>
                 {hasAccounts &&
                     <div className="password-card-grid flex flex-left">
                         {accounts.map((account, index) => (
                             <div className="ml-16 mt-20" key={index}>
-                                <PasswordCard account={account}/>
+                                <PasswordCard account={account} onChecked={this.onCardChecked}/>
                             </div>
                         ))}
                     </div>
@@ -47,7 +55,11 @@ const mapState = (state: RootState) => ({
     accounts: state.accounts
 });
 
-const connector = connect(mapState, {});
+const mapDispatch = {
+    updateSelectedAccounts: (account: Account) => updateSelected(account)
+};
+
+const connector = connect(mapState, mapDispatch);
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
