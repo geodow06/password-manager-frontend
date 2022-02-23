@@ -1,3 +1,6 @@
+import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { RootState } from "./store";
+
 export const DEFAULT_ACTION = "DEFAULT_ACTION";
 
 export abstract class PlainAction {
@@ -18,3 +21,5 @@ export abstract class ActionWithPayload<P extends object = any> extends PlainAct
         super();
     }
 }
+
+export const useCustomSelector: TypedUseSelectorHook<RootState> = useSelector;
