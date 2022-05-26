@@ -1,10 +1,14 @@
 import { useCustomSelector } from "redux/reduxTypes";
 import { Button, Menu, MenuItem } from "@material-ui/core"
 import React from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "redux/store";
+import { CLEAR_SELECTED } from "redux/actions/SelectedActions";
 
 const PasswordActions = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const selected = useCustomSelector(state => state.selected);
+    const dispatch: AppDispatch = useDispatch();
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -16,6 +20,7 @@ const PasswordActions = () => {
 
     const handleDelete = () => {
         selected.forEach(account => console.log(`Deleting account ${account.accountId}`));
+        dispatch({ type: CLEAR_SELECTED});
         close()
     };
 
@@ -55,7 +60,7 @@ const PasswordActions = () => {
                         <MenuItem disabled={multipleSelected} onClick={handleCopy} disableRipple>
                             Copy Password
                         </MenuItem>
-                        <MenuItem disabled={!multipleSelected} onClick={handleDelete} disableRipple>
+                        <MenuItem onClick={handleDelete} disableRipple>
                             Delete
                         </MenuItem>
                     </Menu>
