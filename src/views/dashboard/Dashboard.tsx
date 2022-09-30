@@ -35,7 +35,7 @@ class Dashboard extends Component<DashboardProps, dashboardState> {
                         ))}
                     </div>
                 }
-                {!hasAccounts && 
+                {!hasAccounts &&
                     <div>No accounts found</div>
                 }
             </div>

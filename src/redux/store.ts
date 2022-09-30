@@ -5,7 +5,7 @@ import myHistory from "myHistory";
 import { routerMiddleware } from "connected-react-router";
 
 export const configureStore = (preLoadedState = {}) => {
-    
+
     const middlewares: any = [
         thunk,
         routerMiddleware(myHistory)

@@ -13,12 +13,12 @@ describe('<Layout/>', () => {
                 beforeEach(() => {
                     renderReturn = renderWithConnectedRouter(<Layout/>, store.getState(), "/");
                 });
-                
+
                 test('Should render Topbar component', () => {
                     expect(renderReturn.getByTestId(/topbar/i)).toBeInTheDocument();
                 });
                 test('Should render Dashboard component', () => {
-                   
+
                     expect(renderReturn.getByTestId("dashboard")).toBeInTheDocument();
                 });
                 test('Should render Footer component', async () => {
@@ -29,7 +29,7 @@ describe('<Layout/>', () => {
             describe('At /session/signin', () => {
                 test('Should not render topbar and footer', () => {
                     const { getByText, getByTestId } = renderWithConnectedRouter(<Layout/>, store.getState(), '/session/signin');
-                    
+
                     expect(() => getByTestId(/topbar/i)).toThrowError();
                     expect(() => getByText(/Footer/i)).toThrowError();
                 });

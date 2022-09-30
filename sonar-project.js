@@ -5,7 +5,7 @@ sonarqubeScanner({
   options : {
   'sonar.sources': '.',
   'sonar.inclusions' : 'src/**', // Entry point of your code
-  'sonar.exclusions' : 
+  'sonar.exclusions' :
     'src/**/*.test.*, src/reportWebVitals.ts, src/index.tsx, src/setupTests.ts src/testUtils.tsx',
    // Ignore test files
   }

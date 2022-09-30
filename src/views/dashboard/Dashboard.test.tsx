@@ -7,7 +7,7 @@ import Dashboard from "./Dashboard";
 const testAccounts: Accounts = [
     {
         accountId: "1",
-        accountName: "google", 
+        accountName: "google",
         value:"dcxsfesa",
         imageSource: "",
         url: "https://google.com",
@@ -22,7 +22,7 @@ const testAccounts: Accounts = [
     },
     {
         accountId: "3",
-        accountName: "jitter", 
+        accountName: "jitter",
         value:"dcxsfesa",
         imageSource: "",
         userId: "2",
