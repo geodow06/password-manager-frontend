@@ -43,7 +43,7 @@ const PasswordActions = () => {
 
     return (
         <div>
-            {selected.length !== 0 && 
+            {selected.length !== 0 &&
             <div>
                     <div>{selected.length} items selected</div>
                     <Button onClick={handleClick}>
