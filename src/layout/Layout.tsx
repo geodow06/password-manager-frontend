@@ -20,7 +20,7 @@ type layoutState = {
 const testAccounts = [
     {
         accountId: "1",
-        accountName: "test1", 
+        accountName: "test1",
         value:"testValue1",
         imageSource: "testImg1",
         url: "testUrl1",

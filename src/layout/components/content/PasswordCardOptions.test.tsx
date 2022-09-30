@@ -3,22 +3,22 @@ import PasswordCardOptions from "./PasswordCardOptions";
 import { Account } from "types";
 
 describe("<PasswordOptions/>", () => {
-    
+
     const account: Account = {
         accountId: "1",
         accountName: "test name",
         value: "test value",
         imageSource: "",
         userId: "user1"
-    } 
-    
+    }
+
     describe("Should render IconButtons", () => {
         let renderResult: RenderResult;
         beforeEach(() => {
             renderResult = render(<PasswordCardOptions account={account}/>)
         });
 
-        afterEach(cleanup);    
+        afterEach(cleanup);
 
         test("Should render Edit IconButton", () => {
             expect(renderResult.getByTitle(/Edit/i)).toBeInTheDocument();

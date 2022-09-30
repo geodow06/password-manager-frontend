@@ -58,10 +58,10 @@ describe('<PasswordCard/>', () => {
                         });
 
                         const renderResult = render(<PasswordCard account={withUrlAccount}/>);
-                        
+
                         userEvent.hover(renderResult.getByTestId(/password-card-image/i))
                         expect(await screen.findByText(/Launch/i)).toBeInTheDocument();
-                        
+
                         userEvent.click(renderResult.getByText(/Launch/i));
                         expect(mockedOpen).toBeCalled();
                         jest.clearAllMocks();
@@ -79,7 +79,7 @@ describe('<PasswordCard/>', () => {
                     });
                 });
             });
-    
+
             describe("And the account has no url property", () => {
                 const noUrlAccount = {
                     accountId: "1",

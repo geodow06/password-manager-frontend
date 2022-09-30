@@ -42,7 +42,7 @@ test('Should return correctly updated settings', () => {
         ...initialState,
         settings: {...newSettingsPayload}
     }
-    
+
     const setLayoutAction = new SetLayoutSettingsAction(newSettingsPayload);
     expect(reducer(undefined, setLayoutAction)).toEqual(newSettings);
 })

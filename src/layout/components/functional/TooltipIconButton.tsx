@@ -11,7 +11,7 @@ const TooltipIconButton: FC<TooltipIconButtonProps> = ({ children, title, handle
         <IconButton component="a" onClick={handleOnClick}>
             {children}
         </IconButton>
-    </Tooltip>  
+    </Tooltip>
 );
-    
+
 export default TooltipIconButton;

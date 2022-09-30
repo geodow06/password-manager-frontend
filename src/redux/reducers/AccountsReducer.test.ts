@@ -7,7 +7,7 @@ const initialState: AccountsState = [];
 const previousStateAccounts = [
         {
             accountId: "1",
-            accountName: "test1", 
+            accountName: "test1",
             value:"testValue1",
             imageSource: "testImg1",
             url: "testUrl1",
@@ -39,7 +39,7 @@ describe('Accounts Reducer', () => {
         const newAccountsPayload: Accounts = [
             {
                 accountId: "1",
-                accountName: "test1", 
+                accountName: "test1",
                 value:"testValue1",
                 imageSource: "testImg1",
                 url: "testUrl1",
@@ -54,7 +54,7 @@ describe('Accounts Reducer', () => {
             },
             {
                 accountId: "3",
-                accountName: "test3", 
+                accountName: "test3",
                 value:"testValue3",
                 imageSource: "testImg3",
                 url: "testUrl3",
@@ -64,7 +64,7 @@ describe('Accounts Reducer', () => {
 
         test('Should correctly update the states accounts array', () => {
             const newAccounts = newAccountsPayload;
-    
+
             const setAccountsAction = new SetAccountsAction(newAccountsPayload);
             expect(reducer(undefined, setAccountsAction)).toEqual(newAccounts);
         });

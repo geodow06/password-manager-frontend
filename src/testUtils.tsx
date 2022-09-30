@@ -11,11 +11,11 @@ import routes from "routes";
 
 
 export const renderWithConnectedRouter = (
-        ui: JSX.Element, 
+        ui: JSX.Element,
         preLoadedState: any = {},
-        route: string = "/" 
+        route: string = "/"
     ) => {
-        
+
     const store = configureStore(preLoadedState);
 
     const history = createMemoryHistory({initialEntries: [route]});
