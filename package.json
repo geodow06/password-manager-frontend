@@ -70,6 +70,7 @@
     ]
   },
   "devDependencies": {
+    "jest-extended": "^3.1.0",
     "sonarqube-scanner": "^2.8.1"
   },
   "jest": {
