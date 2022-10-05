@@ -12,7 +12,7 @@ describe('<PasswordCard/>', () => {
             userId: "user1"
         };
         test('Should render account prop name', () => {
-            const renderResult = render(<PasswordCard account={withAccountNameAccount}/>)
+            const renderResult = render(<PasswordCard account={withAccountNameAccount} onChecked={() => {}}/>)
             expect(renderResult.getByText(/test name/i)).toBeInTheDocument();
         });
     });
@@ -27,7 +27,7 @@ describe('<PasswordCard/>', () => {
                 userId: "user1"
             };
             test("Should render alt text", () => {
-                const renderResult = render(<PasswordCard account={withImgAccount}/>)
+                const renderResult = render(<PasswordCard account={withImgAccount} onChecked={() => {}}/>)
                 expect(renderResult.getByAltText(/img/i)).toBeInTheDocument();
             });
         });
@@ -45,7 +45,7 @@ describe('<PasswordCard/>', () => {
                     url: "https://google.com"
                 };
                 test("Should render launch button", () => {
-                    const renderResult = render(<PasswordCard account={withUrlAccount}/>)
+                    const renderResult = render(<PasswordCard account={withUrlAccount} onChecked={() => {}}/>)
                     userEvent.hover(renderResult.getByTestId(/password-card-image/i))
                     expect(renderResult.getByText(/Launch/i)).toBeInTheDocument();
                 });
@@ -57,7 +57,7 @@ describe('<PasswordCard/>', () => {
                             value: mockedOpen
                         });
 
-                        const renderResult = render(<PasswordCard account={withUrlAccount}/>);
+                        const renderResult = render(<PasswordCard account={withUrlAccount} onChecked={() => {}}/>);
 
                         userEvent.hover(renderResult.getByTestId(/password-card-image/i))
                         expect(await screen.findByText(/Launch/i)).toBeInTheDocument();
@@ -70,7 +70,7 @@ describe('<PasswordCard/>', () => {
 
                 describe("And then leaves the card", () => {
                     test("The launch button should removed from the dom", () => {
-                        const renderResult = render(<PasswordCard account={withUrlAccount}/>)
+                        const renderResult = render(<PasswordCard account={withUrlAccount} onChecked={() => {}}/>)
                         const card = renderResult.getByTestId(/password-card-image/i);
                         userEvent.hover(card)
                         expect(renderResult.getByText(/Launch/i)).toBeInTheDocument();
@@ -89,7 +89,7 @@ describe('<PasswordCard/>', () => {
                     userId: "user1"
                 };
                 test("Should not render launch button", () => {
-                    const renderResult = render(<PasswordCard account={noUrlAccount}/>);
+                    const renderResult = render(<PasswordCard account={noUrlAccount} onChecked={() => {}}/>);
                     userEvent.hover(renderResult.getByTestId(/password-card-image/i))
                     expect(renderResult.queryByText(/Launch/i)).toBe(null);
                 });
