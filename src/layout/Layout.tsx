@@ -22,7 +22,7 @@ const testAccounts = [
         accountId: "1",
         accountName: "test1",
         value:"testValue1",
-        imageSource: "testImg1",
+        imageSource: "",
         url: "testUrl1",
         userId: "1",
     },
@@ -30,7 +30,7 @@ const testAccounts = [
         accountId: "2",
         accountName: "test2",
         value: "testValue2",
-        imageSource: "testImg2",
+        imageSource: "",
         userId: "2"
     }
 ];
