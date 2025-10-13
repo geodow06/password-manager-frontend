@@ -45,25 +45,25 @@ const PasswordActions = () => {
         <div>
             {selected.length !== 0 &&
             <div>
-                    <div>{selected.length} items selected</div>
-                    <Button onClick={handleClick}>
-                        Actions
-                    </Button>
-                    <Menu
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={close}
-                    >
-                        <MenuItem disabled={multipleSelected} onClick={handleEdit} disableRipple>
-                            Edit
-                        </MenuItem>
-                        <MenuItem disabled={multipleSelected} onClick={handleCopy} disableRipple>
-                            Copy Password
-                        </MenuItem>
-                        <MenuItem onClick={handleDelete} disableRipple>
-                            Delete
-                        </MenuItem>
-                    </Menu>
+                <div>{selected.length} items selected</div>
+                <Button onClick={handleClick}>
+                    Actions
+                </Button>
+                <Menu
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={close}
+                >
+                    <MenuItem disabled={multipleSelected} onClick={handleEdit} disableRipple>
+                        Edit
+                    </MenuItem>
+                    <MenuItem disabled={multipleSelected} onClick={handleCopy} disableRipple>
+                        Copy Password
+                    </MenuItem>
+                    <MenuItem onClick={handleDelete} disableRipple>
+                        Delete
+                    </MenuItem>
+                </Menu>
             </div>
             }
         </div>
